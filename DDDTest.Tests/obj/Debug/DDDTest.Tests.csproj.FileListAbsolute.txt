@@ -24,3 +24,4 @@ C:\Users\koshi\source\repos\DDD\DDDTest.Tests\obj\Debug\DDDTest.Tests.csproj.Cor
 C:\Users\koshi\source\repos\DDD\DDDTest.Tests\obj\Debug\DDDTest.Tests.csproj.CopyComplete
 C:\Users\koshi\source\repos\DDD\DDDTest.Tests\obj\Debug\DDDTest.Tests.dll
 C:\Users\koshi\source\repos\DDD\DDDTest.Tests\obj\Debug\DDDTest.Tests.pdb
+C:\Users\koshi\source\repos\DDD\DDDTest.Tests\bin\Debug\DDD.Infrastructure.dll.config

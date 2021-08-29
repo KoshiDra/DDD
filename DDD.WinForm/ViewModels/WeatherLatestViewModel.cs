@@ -1,39 +1,88 @@
 ﻿using DDD.Domain.Repositories;
-using DDD.WinForm.Common;
+using DDD.Infrastructure.SQLite;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DDD.WinForm.ViewModels
 {
-    public class WeatherLatestViewModel
+    public class WeatherLatestViewModel : ViweModelBase
     {
         private IWeatherRepositoty _weather;
+
+        public WeatherLatestViewModel()
+            : this(new WeatherSQLite())
+        {
+        }
 
         public WeatherLatestViewModel(IWeatherRepositoty weather)
         {
             _weather = weather;
         }
 
-        public string AreaIdText { get; set; } = string.Empty;
-        public string DataDateText { get; set; } = string.Empty;
-        public string ConditionText { get; set; } = string.Empty;
-        public string TemperatureText { get; set; } = string.Empty;
+        public string _areaIdText = string.Empty;
+        public string AreaIdText
+        {
+            get
+            {
+                return _areaIdText;
+            }
+
+            set
+            {
+                SetProperty(ref _areaIdText, value);
+            }
+        }
+
+        public string _dataDateText = string.Empty;
+        public string DataDateText
+        {
+            get
+            {
+                return _dataDateText;
+            }
+
+            set
+            {
+                SetProperty(ref _dataDateText, value);
+            }
+        }
+
+        public string _conditionText = string.Empty;
+        public string ConditionText
+        {
+            get
+            {
+                return _conditionText;
+            }
+
+            set
+            {
+                SetProperty(ref _conditionText, value);
+            }
+        }
+
+        public string _temperatureText = string.Empty;
+        public string TemperatureText
+        {
+            get
+            {
+                return _temperatureText;
+            }
+
+            set
+            {
+                SetProperty(ref _temperatureText, value);
+            }
+        }
 
         public void Search()
         {
-            var dt = _weather.SearchLatest(Convert.ToInt32(AreaIdText));
+            var entity = _weather.SearchLatest(Convert.ToInt32(AreaIdText));
 
-            if (dt.Rows.Count > 0)
+            if (entity != null)
             {
-                DataDateText = dt.Rows[0]["DataDate"].ToString();
-                ConditionText = dt.Rows[0]["Condition"].ToString();
-                TemperatureText =
-                    string.Format("{0}{1}"
-                        , CommonFunc.RoundString(Convert.ToSingle(dt.Rows[0]["Temperature"].ToString()), CommonConst.TemperatuerDecimalPoint)
-                        , CommonConst.TemperatuerUnitName);
+                DataDateText = entity.DataDate.ToString();
+                ConditionText = entity.Condition.DisplayValue;
+                TemperatureText = entity.Temperature.DiaplayValueWithUnit;
             }
         }
     }

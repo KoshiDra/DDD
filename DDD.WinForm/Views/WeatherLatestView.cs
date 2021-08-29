@@ -1,34 +1,34 @@
-﻿using DDD.WinForm.Common;
-using DDD.WinForm.Data;
+﻿using DDD.WinForm.ViewModels;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace DDD.WinForm
 {
     public partial class WeatherLatestView : Form
     {
+        private WeatherLatestViewModel _viewModel
+            = new WeatherLatestViewModel();
+
         public WeatherLatestView()
         {
             InitializeComponent();
+
+            this.AreaIdTextBox.DataBindings.Add(
+                    "Text", _viewModel, nameof(_viewModel.AreaIdText));
+
+            this.DataDateLabel.DataBindings.Add(
+                    "Text", _viewModel, nameof(_viewModel.DataDateText));
+
+            this.ConditionLabel.DataBindings.Add(
+                    "Text", _viewModel, nameof(_viewModel.ConditionText));
+
+            this.TemperatureLabel.DataBindings.Add(
+                    "Text", _viewModel, nameof(_viewModel.TemperatureText));
         }
 
         private void LatestButton_Click(object sender, EventArgs e)
         {
-
-            int areaId = Convert.ToInt32(this.AreaIdTextBox.Text);
-
-            DataTable dt = WetherSQLite.SearchLatest(areaId);
-
-            if (dt.Rows.Count > 0)
-            {
-                this.DataDateLabel.Text = dt.Rows[0]["DataDate"].ToString();
-                this.ConditionLabel.Text = dt.Rows[0]["Condition"].ToString();
-                this.TemperatureLabel.Text =
-                    string.Format("{0}{1}"
-                        , CommonFunc.RoundString(Convert.ToSingle(dt.Rows[0]["Temperature"].ToString()), CommonConst.TemperatuerDecimalPoint)
-                        , CommonConst.TemperatuerUnitName);
-            }
+            _viewModel.Search();
         }
     }
 }

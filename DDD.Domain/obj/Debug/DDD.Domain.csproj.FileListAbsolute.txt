@@ -1,6 +1,5 @@
 C:\Users\koshi\source\repos\DDD\DDD.Domain\bin\Debug\DDD.Domain.dll
 C:\Users\koshi\source\repos\DDD\DDD.Domain\bin\Debug\DDD.Domain.pdb
-C:\Users\koshi\source\repos\DDD\DDD.Domain\obj\Debug\DDD.Domain.csproj.AssemblyReference.cache
 C:\Users\koshi\source\repos\DDD\DDD.Domain\obj\Debug\DDD.Domain.csproj.CoreCompileInputs.cache
 C:\Users\koshi\source\repos\DDD\DDD.Domain\obj\Debug\DDD.Domain.dll
 C:\Users\koshi\source\repos\DDD\DDD.Domain\obj\Debug\DDD.Domain.pdb

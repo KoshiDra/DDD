@@ -7,3 +7,12 @@ C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\obj\Debug\DDD.Infrastructure.
 C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\obj\Debug\DDD.Infrastructure.csproj.CopyComplete
 C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\obj\Debug\DDD.Infrastructure.dll
 C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\obj\Debug\DDD.Infrastructure.pdb
+C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\bin\Debug\DDD.Infrastructure.dll.config
+C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\bin\Debug\EntityFramework.dll
+C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\bin\Debug\System.Data.SQLite.dll
+C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\bin\Debug\EntityFramework.xml
+C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\koshi\source\repos\DDD\DDD.Infrastructure\bin\Debug\System.Data.SQLite.xml

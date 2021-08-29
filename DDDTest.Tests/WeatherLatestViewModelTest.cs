@@ -1,4 +1,5 @@
-﻿using DDD.Domain.Repositories;
+﻿using DDD.Domain.Entities;
+using DDD.Domain.Repositories;
 using DDD.WinForm.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -25,7 +26,7 @@ namespace DDDTest.Tests
             viewModel.Search();
             Assert.AreEqual("1", viewModel.AreaIdText);
             Assert.AreEqual("2021/08/15 12:12:12", viewModel.DataDateText);
-            Assert.AreEqual("2", viewModel.ConditionText);
+            Assert.AreEqual("曇り", viewModel.ConditionText);
             Assert.AreEqual("32.10℃", viewModel.TemperatureText);
 
         }
@@ -33,23 +34,9 @@ namespace DDDTest.Tests
 
     internal class WeatherMock : IWeatherRepositoty
     {
-        public DataTable SearchLatest(int areaId)
+        public WeatherEntity SearchLatest(int areaId)
         {
-            var dt = new DataTable();
-            dt.Columns.Add("AreaId", typeof(int));
-            dt.Columns.Add("DataDate", typeof(DateTime));
-            dt.Columns.Add("Condition", typeof(int));
-            dt.Columns.Add("Temperature", typeof(float));
-
-            var newRow = dt.NewRow();
-            newRow["AreaId"] = 1;
-            newRow["DataDate"] = Convert.ToDateTime("2021/8/15 12:12:12");
-            newRow["Condition"] = 2;
-            newRow["Temperature"] = 32.1;
-
-            dt.Rows.Add(newRow);
-
-            return dt;
+            return new WeatherEntity(1, Convert.ToDateTime("2021/8/15 12:12:12"), 2, 32.1f);
         }
     }
 }
